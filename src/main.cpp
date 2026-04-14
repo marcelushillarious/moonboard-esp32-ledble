@@ -1,25 +1,25 @@
 #include <config.h>
 
 // variables used inside project
-BLESerial bleSerial;                         // BLE serial emulation
-String problemMessage = "";                  // BLE buffer message
-String humanReadableProblemMessage = "";     // Problem human readable message
-bool problemMessageStarted = false;          // Start indicator of problem message
-bool problemMessageEnded = false;            // End indicator of problem message
-volatile bool backgroundLightEnabled = true; // End indicator of problem message
-String confMessage = "";                     // BLE buffer conf message
-bool confMessageStarted = false;             // Start indicator of conf message
-bool confMessageEnded = false;               // End indicator of conf message
-bool ledAboveHoldEnabled = false;            // Enable the LED above the hold if possible
-int bitmapMoonState = 0;                     // Used to set the Moon Logo
-bool bitmapBleState = false;                 // Used to set the BLE bitmap
-bool bitmapNeoPixelState = false;            // Used to set the Bulb bitmap
-bool bleConnected = false;                   // Ble connected state
-bool setupState = false;                     // Setup in progress
-unsigned long previousMillisBle = 0;         // Last time BLE bitmap was updated
-unsigned long previousMillisMoon = 0;        // Last time Moon logo was updated
-CRGB leds[ledsCount * NEOPIXEL_LED_OFFSET];  // Neopixel leds use by FastLED
-uint16_t prevCount = 0;                      // Number of active leds in the last Boulder
+BLESerial bleSerial;                          // BLE serial emulation
+String problemMessage = "";                   // BLE buffer message
+String humanReadableProblemMessage = "";      // Problem human readable message
+bool problemMessageStarted = false;           // Start indicator of problem message
+bool problemMessageEnded = false;             // End indicator of problem message
+volatile bool backgroundLightEnabled = false; // End indicator of problem message
+String confMessage = "";                      // BLE buffer conf message
+bool confMessageStarted = false;              // Start indicator of conf message
+bool confMessageEnded = false;                // End indicator of conf message
+bool ledAboveHoldEnabled = false;             // Enable the LED above the hold if possible
+int bitmapMoonState = 0;                      // Used to set the Moon Logo
+bool bitmapBleState = false;                  // Used to set the BLE bitmap
+bool bitmapNeoPixelState = false;             // Used to set the Bulb bitmap
+bool bleConnected = false;                    // Ble connected state
+bool setupState = false;                      // Setup in progress
+unsigned long previousMillisBle = 0;          // Last time BLE bitmap was updated
+unsigned long previousMillisMoon = 0;         // Last time Moon logo was updated
+CRGB leds[ledsCount * NEOPIXEL_LED_OFFSET];   // Neopixel leds use by FastLED
+uint16_t prevCount = 0;                       // Number of active leds in the last Boulder
 uint16_t nowCount = 0;
 constexpr uint16_t MAX_ACTIVE_TRACKED = ledsCount * NEOPIXEL_LED_OFFSET;
 uint16_t activeA[MAX_ACTIVE_TRACKED];
